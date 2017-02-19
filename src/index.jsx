@@ -1,3 +1,6 @@
-var nerd = require('./client/nerd.jsx');
+import React from 'react';
+import { render } from 'react-dom';
 
-document.write("It works even now!");
+import { Hello } from './client/nerd.jsx'
+
+render(< Hello />, document.getElementById('root'));

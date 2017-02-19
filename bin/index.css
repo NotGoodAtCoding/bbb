@@ -1,0 +1,50 @@
+body {
+    background-color: #2A2B2A;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #F8F4E3;
+    font-weight: 200;
+}
+
+div,
+span {
+    background-color: #706C61;
+}
+
+div.Navbar {
+    width: 100%;
+    display: flex;
+}
+
+.brand {
+    color: #8DA7BE;
+}
+
+div.Navbar > span {
+    flex-shrink: 1;
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+.navbar-link {
+    text-decoration: none;
+}
+
+.navbar-link > h3 {
+    -webkit-margin-after: 0.8em;
+    -webkit-margin-before: 1.2em;
+}
+
+.Dropdown-button {
+    margin: 0.4em 0;
+}
+
+.Dropdown-menu {
+    border: #8DA7BE solid 2px;
+    border-radius: 3px;
+    border-top: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}

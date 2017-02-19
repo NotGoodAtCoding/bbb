@@ -44,11 +44,19 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
-	var nerd = __webpack_require__(1);
+	var _react = __webpack_require__(2);
 
-	document.write("It works even now!");
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _nerd = __webpack_require__(1);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	(0, _reactDom.render)(_react2.default.createElement(_nerd.Hello, null), document.getElementById('root'));
 
 /***/ },
 /* 1 */
@@ -56,13 +64,18 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Hello = undefined;
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(33);
+	var _navbar = __webpack_require__(179);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -72,7 +85,9 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Hello = function (_React$Component) {
+	// Wrapper for all page content
+
+	var Hello = exports.Hello = function (_React$Component) {
 	    _inherits(Hello, _React$Component);
 
 	    function Hello() {
@@ -84,18 +99,12 @@
 	    _createClass(Hello, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(
-	                'h1',
-	                null,
-	                'Hello!'
-	            );
+	            return _react2.default.createElement(_navbar.Navbar, null);
 	        }
 	    }]);
 
 	    return Hello;
 	}(_react2.default.Component);
-
-	(0, _reactDom.render)(_react2.default.createElement(Hello, null), document.getElementById('root'));
 
 /***/ },
 /* 2 */
@@ -21530,6 +21539,183 @@
 
 	module.exports = ReactDOMInvalidARIAHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Navbar = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _dropdown = __webpack_require__(180);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// Simple Navbar. Has a simple brand header, a link sample,
+	// and renders a dropdown component.
+
+	var Navbar = exports.Navbar = function (_React$Component) {
+	    _inherits(Navbar, _React$Component);
+
+	    function Navbar() {
+	        _classCallCheck(this, Navbar);
+
+	        return _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).apply(this, arguments));
+	    }
+
+	    _createClass(Navbar, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'Navbar' },
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'brand' },
+	                    _react2.default.createElement(
+	                        'h2',
+	                        null,
+	                        'BBB'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'span',
+	                    null,
+	                    _react2.default.createElement(
+	                        'a',
+	                        { className: 'navbar-link', href: '#' },
+	                        _react2.default.createElement(
+	                            'h3',
+	                            null,
+	                            'Link'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(_dropdown.Dropdown, null)
+	            );
+	        }
+	    }]);
+
+	    return Navbar;
+	}(_react2.default.Component);
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Dropdown = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// Simple dropdown component. On click, renders a menu of 
+	// lyrics to the rasputin song. Static, should be updated to 
+	// take in a variable menu element.
+
+	var Dropdown = exports.Dropdown = function (_React$Component) {
+	    _inherits(Dropdown, _React$Component);
+
+	    function Dropdown(props) {
+	        _classCallCheck(this, Dropdown);
+
+	        var _this = _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).call(this, props));
+
+	        _this.state = { isToggleOn: false };
+
+	        // This binding is necessary to make `this` work in the callback
+	        _this.handleClick = _this.handleClick.bind(_this);
+	        return _this;
+	    }
+
+	    _createClass(Dropdown, [{
+	        key: "renderMenu",
+	        value: function renderMenu() {
+	            if (this.state.isToggleOn) {
+	                return _react2.default.createElement(
+	                    "div",
+	                    { className: "Dropdown-menu" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        null,
+	                        "RAH RAH"
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        null,
+	                        "RASPUTIN"
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        null,
+	                        "LOVER OF THE RUSSIAN QUEEN"
+	                    )
+	                );
+	            }
+	        }
+	    }, {
+	        key: "handleClick",
+	        value: function handleClick() {
+	            this.setState(function (prevState) {
+	                return {
+	                    isToggleOn: !prevState.isToggleOn
+	                };
+	            });
+	        }
+	    }, {
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "span",
+	                { className: "Dropdown" },
+	                _react2.default.createElement(
+	                    "button",
+	                    { className: "Dropdown-button",
+	                        onClick: this.handleClick },
+	                    _react2.default.createElement(
+	                        "h3",
+	                        null,
+	                        "Drop it!"
+	                    )
+	                ),
+	                this.renderMenu()
+	            );
+	        }
+	    }]);
+
+	    return Dropdown;
+	}(_react2.default.Component);
 
 /***/ }
 /******/ ]);

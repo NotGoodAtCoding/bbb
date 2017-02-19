@@ -1,10 +1,12 @@
 import React from 'react';
-import { render } from 'react-dom';
 
-class Hello extends React.Component {
+import { Navbar } from './components/navbar.jsx';
+
+// Wrapper for all page content
+
+export class Hello extends React.Component {
     render() {
-        return <h1>Hello!</h1>
+        return < Navbar />
     }
 }
 
-render(< Hello />, document.getElementById('root'));
