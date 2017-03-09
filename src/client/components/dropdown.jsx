@@ -1,41 +1,46 @@
 import React from 'react';
 
-// Simple dropdown component. On click, renders a menu of 
-// lyrics to the rasputin song. Static, should be updated to 
-// take in a variable menu element.
+// Simple dropdown component.
+// Pass in a list of options from which to select via the 'items' prop
 
 export class Dropdown extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {isToggleOn: false};
+        this.state = {open: false};
 
         // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
+        this.toggle = this.toggle.bind(this);
+        this.off = this.off.bind(this);
+        this.renderMenuItems = this.renderMenuItems.bind(this);
     }
 
-     renderMenu() {
-         if (this.state.isToggleOn) {
+     renderMenuItems() {
+         if (this.state.open) {
              return <div className="Dropdown-menu">
-                 <div>RAH RAH</div>
-                 <div>RASPUTIN</div>
-                 <div>LOVER OF THE RUSSIAN QUEEN</div>
-             </div>
+                 { this.props.items }
+                 </div>
          }
      }
 
-    handleClick() {
+    toggle() {
         this.setState(prevState => ({
-            isToggleOn: !prevState.isToggleOn
+            open: !prevState.open
+        }));
+    }
+
+    off() {
+        this.setState(prevState => ({
+            open: false
         }));
     }
 
     render() {
         return <span className="Dropdown">
             <button className="Dropdown-button"
-                    onClick={this.handleClick}>
+                    onClick={this.toggle}>
                 <h3>Drop it!</h3>
             </button>
-            { this.renderMenu() }
+            { this.renderMenuItems() }
         </span>
     }
 }

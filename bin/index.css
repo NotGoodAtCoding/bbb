@@ -48,3 +48,7 @@ div.Navbar > span {
     padding: 12px 16px;
     z-index: 1;
 }
+
+.MenuItem {
+    cursor: pointer;
+}
